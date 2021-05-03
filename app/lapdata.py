@@ -7,7 +7,7 @@ def getData():
 
     attr = ["SteeringWheelAngle", "Speed", "Throttle","Brake", "RPM", "Gear", "Lap", "LapDistPct", "LapDist", "TrackTempCrew", "RRwearM", "LRwearM", "RFwearM", "LFwearM", "LapBestLap", "LapDeltaToBestLap", "LapDeltaToBestLap_OK"]
 
-    dfLaps = pd.read_csv("app/lapdata_Alex_Spa.csv", names=attr)
+    dfLaps = pd.read_csv("app/lapdata_spa_2.csv", names=attr)
     dfLaps["SteeringWheelAngle"] = round(dfLaps["SteeringWheelAngle"]*180/math.pi, 2)
     dfLaps["Speed"] = round(dfLaps["Speed"]*3.6, 2)
     dfLaps["RPM"] = round(dfLaps["RPM"])
