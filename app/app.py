@@ -69,7 +69,7 @@ def inputs_graph():
     alt.renderers.enable('mimetype')
     alt.data_transformers.disable_max_rows()
     w, h = 1400, 250
-    data = ld.getData()
+    data = ld.getData()[["LapDist","Throttle","Brake","Lap"]]
     dfturns = ld.GetTurns()
     zoom = alt.selection_interval(bind='scales', encodings=['x'])
     throttle = alt.Chart(data).mark_line().encode(x='LapDist', y=alt.Y('Throttle', scale=alt.Scale(domain=[-0.2, 1.2])), color=alt.Color('Lap', scale=alt.Scale(scheme='blues'))).properties(width=w, height=h)
